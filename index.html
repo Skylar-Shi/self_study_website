@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Firebase Leaderboard Example</title>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/leaderboard.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/leaderboard.css">
+  </head>
+
+  <body>
+    <h1>Self Study Time Leaderboard</h1>
+
+    <table id="leaderboardTable" border=1 width=400>
+      <tr>
+        <th>Student ID</th>
+        <th>Actual Self Study Minutes</th>
+        <th>Voilation Count</th>
+      </tr>
+    </table>
+
+    <input type="text" id="sidInput" placeholder="student id">
+    <input type="text" id="timeInput" placeholder="alctual study minutes">
+    <input type="text" id="countInput" placeholder="voilation count">
+
+    <div id="longestStudyTime">
+      Longest study time so far: <span id="longestStudyTimeDiv"></span>
+    </div>
+
+    <img src="imgs/self_study.png" alt="I love self study!", width="200" height="250">
+  </body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "rules": {
+    // Let everyone read and write to the "leaderboard" node
+    "leaderboard": {
+      ".read": true,
+      ".write": true,
+
+      // The highest score must be a number
+      "longestStudyTime": {
+        ".validate": "newData.isNumber()"
+      },
+
+      "scoreList": {
+        "$sid": {
+          // Each score must contain a "name" and "text"
+          ".validate": "newData.hasChildren(['sid', 'time', 'count])",
+
+          // "name" must be a string
+          "sid": {
+            ".validate": "newData.isString()"
+          },
+
+          // "score" must be a number
+          "time": {
+            ".validate": "newData.isNumber()"
+          },
+
+          // "score" must be a number
+          "count": {
+            ".validate": "newData.isNumber()"
+          },
+
+          // No other children are allowed
+          "$other": {
+            ".validate": false
+          }
+        }
+      },
+
+      // No other children are allowed
+      "$other": {
+        ".validate": false
+      }
+    }
+  }
+}
